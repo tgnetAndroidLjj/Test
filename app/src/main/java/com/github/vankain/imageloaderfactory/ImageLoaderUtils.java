@@ -13,10 +13,15 @@ public class ImageLoaderUtils {
         // 初始化图片加载器模块
         ImageLoaderWrapper.initDefault(context, file,
                 debug);
+        GlideWrapper.init(context);
     }
 
     public static ImageFrameworkFactory getFramework(){
-        return new UILFraworkFactory();
+//        if(type == 1){
+            return new UILFraworkFactory();
+//        } else {
+//            return new GlideFrameworkFactory();
+//        }
     }
 
 }

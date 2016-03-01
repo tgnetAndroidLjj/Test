@@ -9,5 +9,6 @@ public interface ImageConfigProduct {
     void setFailRes(int failRes);
     void setsupportMemoryCache(boolean flag);
     void setsupportDiskCache(boolean flag);
+    void setFadeIn(int duration);
     Object get();
 }

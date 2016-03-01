@@ -1,9 +1,9 @@
 package com.github.vankain.imageloaderfactory;
 
 /**
- * Created by Administrator on 2016/2/29.
+ * Created by Administrator on 2016/3/1.
  */
-public class UILConfigProduct implements ImageConfigProduct {
+public class GlideConfigProduct implements ImageConfigProduct {
     //default true
     public boolean isSupportMemoryCache;
     public boolean isSupportDiskCache;
@@ -12,7 +12,8 @@ public class UILConfigProduct implements ImageConfigProduct {
     public int failRes;
     public int duration;
 
-    public UILConfigProduct() {
+
+    public GlideConfigProduct() {
         this.isSupportMemoryCache = true;
         this.isSupportDiskCache = true;
         this.loadingRes = 0;
@@ -52,12 +53,6 @@ public class UILConfigProduct implements ImageConfigProduct {
 
     @Override
     public Object get() {
-        ImageLoaderWrapper.DisplayConfig config = new ImageLoaderWrapper.DisplayConfig.Builder().build();
-        config.loadFailImageRes = this.loadingRes;
-        config.loadFailImageRes = this.failRes;
-        config.stubImageRes = this.defaulRes;
-        config.supportMemoryCache = this.isSupportMemoryCache;
-        config.supportDiskCache = this.isSupportDiskCache;
-        return config;
+        return this;
     }
 }
