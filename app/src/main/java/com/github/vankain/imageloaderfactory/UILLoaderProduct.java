@@ -19,7 +19,8 @@ public class UILLoaderProduct implements ImageLoaderProduct {
     }
 
     @Override
-    public void cleanImageCache(String imageUrl) {
+    public void cleanImageCache(String url) {
+        ImageLoaderWrapper.getDefault().clearDefaultLoaderCache(url);
 
     }
 }

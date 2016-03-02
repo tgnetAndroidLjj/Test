@@ -37,4 +37,17 @@ public class GlideWrapper {
         return Glide.with(mContext);
     }
 
+    public void cleanCache(){
+        // crash: method on a background thread
+        // you should put it on threadpool
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Glide.get(mContext).clearMemory();
+                Glide.get(mContext).clearDiskCache();
+            }
+        });
+
+    }
+
 }

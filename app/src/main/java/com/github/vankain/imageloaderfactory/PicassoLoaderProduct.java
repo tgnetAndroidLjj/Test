@@ -3,33 +3,30 @@ package com.github.vankain.imageloaderfactory;
 import android.widget.ImageView;
 
 /**
- * Created by Administrator on 2016/3/1.
+ * Created by Administrator on 2016/3/2.
  */
-public class GlideLoaderProduct implements ImageLoaderProduct {
+public class PicassoLoaderProduct implements ImageLoaderProduct {
     @Override
     public void display(String imageUri, ImageView imageView) {
-        GlideWrapper.getDefalt()
-                .getGlide()
-                .load(imageUri)
-                .centerCrop()
-                .into(imageView);
+        PicassoWrapper.getDefalt().getPicasso()
+                .load(imageUri).into(imageView);
     }
 
     @Override
     public void display(String imageUrl, ImageView imageView, ImageConfigProduct config) {
-        GlideConfigProduct mConfig = (GlideConfigProduct) config.get();
-        GlideWrapper.getDefalt()
-                .getGlide()
+        PicassoConfigProduct mConfig = (PicassoConfigProduct) config.get();
+        PicassoWrapper.getDefalt()
+                .getPicasso()
                 .load(imageUrl)
-                .centerCrop()
                 .placeholder(mConfig.loadingRes) // can also be a drawable
                 .error(mConfig.failRes) // will be displayed if the image cannot be loaded
-                .crossFade(mConfig.duration)
                 .into(imageView);
     }
 
     @Override
     public void cleanImageCache(String url) {
-        GlideWrapper.getDefalt().cleanCache();
+        PicassoWrapper.getDefalt()
+                .getPicasso()
+                .invalidate(url);
     }
 }
