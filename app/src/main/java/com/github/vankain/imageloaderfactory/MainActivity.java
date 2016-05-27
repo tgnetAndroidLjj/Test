@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int mLastFrameWorkType = 1;
 
-    //    public final static String url = "http://desk.fd.zol-img.com.cn/g5/M00/05/02/ChMkJ1bD1HCIY1ATAA-BspTxVL8AAKTXwOOeQsAD4HK484.jpg";
+//        public final static String url = "http://desk.fd.zol-img.com.cn/g5/M00/05/02/ChMkJ1bD1HCIY1ATAA-BspTxVL8AAKTXwOOeQsAD4HK484.jpg";
     public final static String url = "https://raw.githubusercontent.com/iluwatar/java-design-patterns/master/abstract-factory/etc/abstract-factory_1.png";
 
     @Override
